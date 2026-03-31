@@ -1,31 +1,35 @@
 # MERN API Integration
 
 ## Overview
-Full-stack project that connects a React frontend with Express APIs and MongoDB-based data handling.
+Full-stack project that connects a React frontend with Express APIs to demonstrate request handling, response flow, validation, and UI updates based on backend data.
 
 ## Features
-- Frontend-backend API integration
-- Data display and submission
-- Loading and empty state handling
-- Structured request and response flow
+- Fetch items from backend API
+- Add new items using POST request
+- Input validation for empty submissions
+- Dynamic UI updates from API responses
+- Structured JSON response handling
 
 ## Tech Stack
-React, Node.js, Express, MongoDB, JavaScript
+React, Node.js, Express, JavaScript
 
 ## Architecture
-React UI → Express API → MongoDB
+React UI → Express API → JSON Response → UI Update
 
 ## What I implemented
-- Implemented GET and POST API endpoints for data handling
-- Handled request body and structured JSON responses
-- Connected React frontend with backend APIs using fetch
-- Updated UI dynamically based on API responses
-- Added input validation to prevent invalid data submission
+- Built GET and POST API endpoints with Express
+- Connected React UI to backend using fetch
+- Added frontend validation for invalid input
+- Updated UI state based on API responses
 
 ## How to run
-1. Clone repository  
-2. Install dependencies  
-3. Start frontend and backend services
+1. Clone repository
+2. Run `npm install`
+3. Start backend with `node server.js`
+4. Start frontend separately if expanded into full React app
+
+## Sample Output
+See `output_example.json`
 
 ## Status
-Initial MERN integration structure completed. Further improvements in progress.
+Improved full-stack prototype with API integration and validation
