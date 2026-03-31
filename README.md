@@ -16,10 +16,11 @@ React, Node.js, Express, MongoDB, JavaScript
 React UI → Express API → MongoDB
 
 ## What I implemented
-- Built a React UI for displaying and submitting data
-- Added Express endpoints for API communication
-- Structured request and response handling across the stack
-- Simulated full-stack data flow with basic validation
+- Implemented GET and POST API endpoints for data handling
+- Handled request body and structured JSON responses
+- Connected React frontend with backend APIs using fetch
+- Updated UI dynamically based on API responses
+- Added input validation to prevent invalid data submission
 
 ## How to run
 1. Clone repository  
