@@ -4,15 +4,19 @@ function App() {
   const [items, setItems] = useState([]);
   const [newItem, setNewItem] = useState("");
 
-  // GET items
   useEffect(() => {
     fetch("http://localhost:5000/api/items")
       .then((res) => res.json())
-      .then((data) => setItems(data));
+      .then((data) => setItems(data))
+      .catch((error) => console.error("Error fetching items:", error));
   }, []);
 
-  // POST new item
   const handleAddItem = () => {
+    if (!newItem.trim()) {
+      alert("Please enter a valid item");
+      return;
+    }
+
     fetch("http://localhost:5000/api/items", {
       method: "POST",
       headers: {
@@ -25,16 +29,16 @@ function App() {
     })
       .then((res) => res.json())
       .then((data) => {
-        setItems([...items, data.item]); // update UI
-        setNewItem(""); // clear input
-      });
+        setItems([...items, data.item]);
+        setNewItem("");
+      })
+      .catch((error) => console.error("Error adding item:", error));
   };
 
   return (
     <div>
       <h1>MERN API Integration</h1>
 
-      {/* Input box */}
       <input
         type="text"
         value={newItem}
@@ -42,10 +46,8 @@ function App() {
         placeholder="Enter item"
       />
 
-      {/* Button */}
       <button onClick={handleAddItem}>Add Item</button>
 
-      {/* List */}
       <ul>
         {items.map((item) => (
           <li key={item.id}>{item.name}</li>
