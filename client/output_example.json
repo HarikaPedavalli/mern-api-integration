@@ -1,0 +1,7 @@
+{
+  "message": "Item created successfully",
+  "item": {
+    "id": 3,
+    "name": "Security Gap"
+  }
+}
