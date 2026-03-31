@@ -1,8 +1,13 @@
+import { useEffect, useState } from "react";
+
 function App() {
-  const items = [
-    { id: 1, name: "Assessment Report" },
-    { id: 2, name: "Vendor Task" }
-  ];
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/items")
+      .then((res) => res.json())
+      .then((data) => setItems(data));
+  }, []);
 
   return (
     <div>
