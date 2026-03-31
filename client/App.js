@@ -22,15 +22,14 @@ function App() {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({
-        id: items.length + 1,
-        name: newItem
-      })
+      body: JSON.stringify({ name: newItem })
     })
       .then((res) => res.json())
       .then((data) => {
-        setItems([...items, data.item]);
-        setNewItem("");
+        if (data.item) {
+          setItems([...items, data.item]);
+          setNewItem("");
+        }
       })
       .catch((error) => console.error("Error adding item:", error));
   };
@@ -38,14 +37,12 @@ function App() {
   return (
     <div>
       <h1>MERN API Integration</h1>
-
       <input
         type="text"
         value={newItem}
         onChange={(e) => setNewItem(e.target.value)}
         placeholder="Enter item"
       />
-
       <button onClick={handleAddItem}>Add Item</button>
 
       <ul>
